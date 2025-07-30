@@ -10,13 +10,26 @@
 <body class="index_body">
     
     <header class="index_header">
-        <p>Fernando Sanches</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cv.html">CV</a></li>
-            </ul>
-        </nav>
+        <a class="FS" href="index.html">
+            <strong>Fernando Sanches</strong>
+        </a>
+    
+        <div class="menu-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="projects.html">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="">about-me</a>
+            </div>
+        </div>
     </header>
     
     <main class="index_main">
@@ -24,51 +37,54 @@
             <img src="" alt="">
             <h2 class="title">Fernando Sanches</h2>
             <p>Student, Developer & Runner</p>
-            <div class="redes">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+            <div class="container-redes">
+                <div class="redes">
+                    <nav>
+                            <a class="link" href="projects.html">
+                              <span>Projects</span>
+                            </a>
+                    </nav>
+                </div>
+                <div class="redes">
+                    <nav>
+                        <a class="link" href="projects.html">
+                            <span >Contact</span>
+                        
+                        </a>
+                    </nav>
+                </div>
             </div>
         </article>
-        <div id="about-me" class="section">
-            <div class="container">
-                <p><strong>Hey!!</strong></p>
-                <p>
-                    I’m Fernando Sanches from Brazil!<br>
-                    like programming, as well as running, taking photos, going to the gym and learning new things!<br>
-                    Feel free to get in touch or take a look at my past projects below.
-                </p>
-            </div>
-        </div>
-        <article class="wrapper_2">
-            <p>Portfolio</p>
-        </article>
-        
-        
+       
     </main>
   
-    <footer class="index_footer">
-        <nav>
-            <div>
-                <p>Contact me</p>
-                <ul>
-                    <li><a href="">LinkedIn</a></li>
-                    <li><a href="https://github.com/fernandosanches">GitHub</a></li>
-                    <li><a href="https://www.instagram.com/fernandosanches/">Instagram</a></li>
-                </ul>
-            </div>
-            <div>
-                <p>Site map</p>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>© Copyright 2025 Fernando Sanches</p>
-    </footer>
+   
+    
+    <script>
+        // Menu toggle functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

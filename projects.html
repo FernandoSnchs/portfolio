@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="projects_body">
+    <header class="index_header">
+        <p>Fernando Sanches</p>
+    
+        <div class="menu-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="dropdown-menu">
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="cv.html">CV</a>
+                <a href="projects.html">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+    <main class="projects_main">
+        <div class="section_projects">
+            <div class="quad1">
+                <span>My projects</span>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Menu toggle functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
