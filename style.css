@@ -1,0 +1,226 @@
+@font-face {
+    font-family: ;
+    src: url();
+}
+
+/* Design Minimalista com Glass Effect Sutil */
+.index_body {
+    margin: 0;
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.43;
+    letter-spacing: .01071em;
+}
+
+/* Header Minimalista com Glass Sutil */
+.index_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.index_header p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.index_header ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.index_header a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.index_header a:hover {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Main Content */
+/*wrapper*/
+
+.wrapper {
+    animation: scroll1 100s linear infinite;
+    background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
+    background-size: 100%;
+    color: #eee;
+    min-height: 100px;
+    height: 100vh;
+    min-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    
+  }
+  .title {
+    font-size: 2.5rem;
+    margin: 0;
+
+  }
+  .wrapper p{
+    font-size: 1.6rem;
+  }
+  
+  @keyframes scroll1 {
+    100% {
+      background-position: 0px 400%;
+    }
+  }
+  
+  /* Fallback if the operatring system prefers reduced motion*/
+  @media (prefers-reduced-motion) {
+    .wrapper {
+      animation: scroll 800s linear infinite;
+    }
+  }
+  
+  @media (min-width: 670px) {
+    .title {
+      font-size: 5rem;
+    }
+  }
+  
+.wrapper_2{
+  animation: scroll2 100s linear infinite;
+  background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
+  background-size: 100%;
+  color: #eee;
+  min-height: 100px;
+  height: 20vh;
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+.wrapper_2 p{
+  font-size: 2rem;
+}
+@keyframes scroll2 {
+  100% {
+    background-position: 0px 200%;
+  }
+}
+
+/* Footer */
+.index_footer {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    margin-top: 60px;
+}
+
+.index_footer nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.index_footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.index_footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.index_footer a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: inline-block;
+    margin: 2px;
+}
+
+.index_footer a:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#about-me{
+  font-weight: 300;
+  padding-top: 1rem;
+  padding-right: 0px;
+  padding-bottom: 1rem;
+  padding-left: 0px;
+  font-size: 1.5rem;
+}
+.section{
+  background-color: #fff;
+  color: black;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,.2),0px 2px 2px 0px rgba(0,0,0,.14),0px 1px 5px 0px rgba(0,0,0,.12);
+}
+.container{
+  width: 100%;
+  max-width: 1280px;
+  padding: 24px;
+  padding: clamp(8px,10%,24px);
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.bio{
+  width: 400px;
+  border: solid 0.009px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+  
