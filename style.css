@@ -1,15 +1,16 @@
 /* Font declarations can be added here if needed */
 @font-face {
   font-family: teste1;
-  src: url(MovVariableTRIALVF.ttf);
+  src: url(MovVariableTRIALVF.woff2);
+ 
 }
 @font-face {
   font-family: sla;
   src: url(EaseDisplayTRIAL-Regular.ttf);
 }
 @font-face {
-  font-family: teste2;
-  src: url(EaseVariableTRIALVF.woff);
+  font-family: 'noi-grotesk-fix';
+  src: url(NoiVariableFlexTrialGX.ttf);
 }
 /* Design Minimalista com Glass Effect Sutil */
 .index_body {
@@ -18,7 +19,7 @@
     background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
     font-family: teste2;
     line-height: 1.43;
-    letter-spacing: .01071em;
+    font-feature-settings: "ss01","ss02","ss03","ss04", "ss11", "wght" 750;
 }
 
 /* Header Minimalista com Glass Sutil */
@@ -196,6 +197,7 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+    
 }
 
 .dropdown-content::before {
@@ -230,6 +232,8 @@
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
+    font-family: 'noi-grotesk-fix';
+    font-variation-settings: 'ss01', 'ss02','ss03','ss04','ss05','ss06','ss07','ss08','ss11','ss12','ss13', 'ital' 0;
 }
 
 .dropdown-content a:hover {
@@ -238,6 +242,7 @@
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateX(5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-variation-settings: 'ital' 5;
 }
 
 .dropdown-content a:first-child {
@@ -254,7 +259,8 @@
 .wrapper {
     animation: scroll1 100s linear infinite;
     background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     color: #eee;
     min-height: 100px;
     height: 90vh;
@@ -266,15 +272,39 @@
     align-items: center;
     perspective: 1000px;
     perspective-origin: 50% 50%;
+    will-change: transform;
+    contain: layout paint;
     
+  }
+  .avatar {
+    width: 150px; 
+    height: 150px;
+    border: 1px ; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transform: scale(3);
   }
   .title {
     font-size: 2.5rem;
     margin: 0;
+    font-family: 'noi-grotesk-fix';
+    font-variation-settings: 'ss01', 'ss02','ss03','ss04','ss05','ss06','ss07','ss08','ss11','ss12','ss13';
 
   }
   .wrapper p{
     font-size: 1.6rem;
+    font-family: 'noi-grotesk-fix';
+    font-variation-settings: 'ss01', 'ss02','ss03','ss04','ss05','ss06','ss07','ss08','ss11','ss12','ss13';
   }
   
   @keyframes scroll1 {
@@ -320,9 +350,15 @@
   
   
 }
-.link:hover{
+.link span{
+  font-family: 'noi-grotesk-fix';
+	transition: font-variation-settings 0.5s ease;
+	font-variation-settings: 'wght' 100;
+}
+.link span:hover{
   transform: scaleX(1.2);
-  transition: transform 2s;
+  transition: all 0.2s;
+  font-variation-settings: 'wght' 900;
 }
 
 
@@ -376,6 +412,56 @@
 
 
 /*projects*/
+.projects_header{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    position: relative;
+}
+.projects_header p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.projects_header ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projects_header  .dropdown-menu a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.projects_header .dropdown-content a:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
 .projects_body{
   margin: 0;
   background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
@@ -383,10 +469,85 @@
   line-height: 1.43;
   letter-spacing: .01071em;
 }
-.projects_main{
-  
-}
 
+  .projects_body {
+    margin: 0;
+    padding: 40px;
+    background: url('imgs/efe-yagiz-soysal-LH4RyETZBpw-unsplash.jpg') no-repeat center center fixed;
+    background-size: 100%; /* zoom */
+    background-position: center bottom -1600px; /* foca no meio pro zoom não andar pra esquerda */
+    background-repeat: no-repeat;
+    font-family: 'noi-grotesk-fix', sans-serif;
+    color: white;
+  }
+  
+  
+  .projects_title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-variation-settings: 'wght' 700;
+    color: 	#1a1a1a;
+    
+  }
+  
+  .projects_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .project_card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+  }
+  
+  .project_card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .project_card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .project_info {
+    padding: 16px;
+  }
+  
+  .project_info h2 {
+    font-size: 1.4rem;
+    margin: 0 0 8px;
+  }
+  
+  .project_info p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+.glass_overlay {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.4); /* leve escurecida pra contraste */
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
 
 
 

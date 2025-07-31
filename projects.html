@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="projects_body">
-    <header class="index_header">
+    <header class="projects_header">
         <p>Fernando Sanches</p>
     
         <div class="menu-toggle">
@@ -26,13 +26,30 @@
             </div>
         </div>
     </header>
-    <main class="projects_main">
-        <div class="section_projects">
-            <div class="quad1">
-                <span>My projects</span>
+    <div class="glass_overlay">
+        <main class="projects_main">
+            <h1 class="projects_title">Meus Projetos</h1>
+        <section class="projects_grid">
+          <!-- Projeto 1 -->
+          <a href="projeto1.html" class="project_card">
+            <img src="imgs/thumb-projeto1.jpg" alt="Projeto 1">
+            <div class="project_info">
+              <h2>Projeto 1</h2>
+              <p>Descrição curtinha sobre o projeto.</p>
             </div>
-        </div>
-    </main>
+          </a>
+          <!-- Projeto 2 -->
+          <a href="projeto2.html" class="project_card">
+            <img src="imgs/thumb-projeto2.jpg" alt="Projeto 2">
+            <div class="project_info">
+              <h2>Projeto 2</h2>
+              <p>Mais uma descrição rápida aqui.</p>
+            </div>
+          </a>
+          <!-- Adicione mais projetos conforme quiser -->
+        </section>
+        </main>
+    </div>
     <script>
         // Menu toggle functionality
         const menuToggle = document.querySelector('.menu-toggle');
