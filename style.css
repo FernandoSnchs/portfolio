@@ -13,13 +13,7 @@
   src: url(NoiVariableFlexTrialGX.ttf);
 }
 
-.index_body {
-    margin: 0;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
-    font-family: teste2;
-    line-height: 1.43;
-    font-feature-settings: "ss01","ss02","ss03","ss04", "ss11", "wght" 750;
-}
+
 
 
 .index_header {
@@ -459,23 +453,41 @@
 
 
 .projects_grid{
-  width: 50%;
+  width: 49%;
   height: 100%;
   display: flex;
   margin-left: auto;
+  row-gap: 20px;
+  flex-direction: column;
+}
+.section-titlePJ{
+  padding-top: 150px;
+  width: 560px;
+  border-bottom: 2.5px solid white;
+  height: 80px;
+}
+.section-titlePJ .number{
+  padding-left: 300px;
+  font-family: 'noi-grotesk-fix';
+  font-size: 1.5em;
+  
+
 }
 .title_projects {
-  width: 40dvw;
+  padding-left: 5px;
   height: 60px;
   font-size: 3.5em;
-  border-bottom: 1px solid white;
   font-family: 'noi-grotesk-fix';
-  font-variation-settings: "wght" 800, "wdth" 125;
-  margin-top: 3em;
-  
-  
-  
-  
+  font-variation-settings: "wght" 750, "ital" 1;
+  font-feature-settings: "aalt" 0, "calt" 0, "locl" 0, "ordn" 0, "rlig" 0, "salt" 0, "ss01", "ss02", "ss03", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss12", "ss13"; 
+}
+.projects_grid .projects{
+  font-family: 'noi-grotesk-fix';
+  font-variation-settings: 'wght' 300;
+  font-size: 2em;
+  border-bottom: 2.5px solid white;
+  width: 560px;
+  height: 60px;
 }
 
 
