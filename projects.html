@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Projects|FS</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="projects_body">
+<body class="wrapper">
     <header class="projects_header">
         <p>Fernando Sanches</p>
     
@@ -28,30 +28,15 @@
     </header>
     <div class="glass_overlay">
         <main class="projects_main">
-            <h1 class="projects_title">Meus Projetos</h1>
         <section class="projects_grid">
-          <!-- Projeto 1 -->
-          <a href="projeto1.html" class="project_card">
-            <img src="imgs/thumb-projeto1.jpg" alt="Projeto 1">
-            <div class="project_info">
-              <h2>Projeto 1</h2>
-              <p>Descrição curtinha sobre o projeto.</p>
-            </div>
-          </a>
-          <!-- Projeto 2 -->
-          <a href="projeto2.html" class="project_card">
-            <img src="imgs/thumb-projeto2.jpg" alt="Projeto 2">
-            <div class="project_info">
-              <h2>Projeto 2</h2>
-              <p>Mais uma descrição rápida aqui.</p>
-            </div>
-          </a>
-          <!-- Adicione mais projetos conforme quiser -->
+            <span class="title_projects">Projects</span>
+          
+          
         </section>
         </main>
     </div>
     <script>
-        // Menu toggle functionality
+        
         const menuToggle = document.querySelector('.menu-toggle');
         const dropdownMenu = document.querySelector('.dropdown-menu');
         
@@ -60,7 +45,7 @@
             dropdownMenu.classList.toggle('active');
         });
         
-        // Close dropdown when clicking outside
+        
         document.addEventListener('click', function(event) {
             if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
                 menuToggle.classList.remove('active');
@@ -68,7 +53,7 @@
             }
         });
         
-        // Close dropdown when pressing Escape key
+        
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 menuToggle.classList.remove('active');
