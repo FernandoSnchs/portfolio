@@ -525,5 +525,12 @@
   height: 20dvh;
   
 }
+.grid-imgs{
+width: 100px;
+height: 100px;
+display: block;
+margin-top: auto;
+
+}
 
 
