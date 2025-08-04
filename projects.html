@@ -30,17 +30,15 @@
         <main class="projects_main">
         <section class="projects_grid">
             <section class="grid-imgs">
-                <img src="/imgs/" alt="">
-                <img src="" alt="">
+                <img class="imagemProjeto" src="imgs/20250725_224449312_iOS.jpg" alt="">
+                <img class="imagemProjeto" src="imgs/efe-yagiz-soysal-LH4RyETZBpw-unsplash.jpg" alt="">
             </section>
 
-            <div class="section-titlePJ">
+            <div class="projects-list">
                 <span class="title_projects">Projects</span>
-                <span class="number">2</span>
-                <div class="projects_box">
-                    <span class="project-1">SophiAcademy</span>
-                    <span class="project-2"></span>
-                </div>
+                <p class="titulo-projeto" data-image="imgs/20250725_224449312_iOS.jpg">SophiAcademy</p>
+                <p class="titulo-projeto" data-image= "imgs/efe-yagiz-soysal-LH4RyETZBpw-unsplash.jpg">naosei</p>
+                <p class="titulo-projeto" data-image="">seila</p>
             </div>
             
           
@@ -51,7 +49,8 @@
     </div>
     <script>
         
-        const menuToggle = document.querySelector('.menu-toggle');
+         // Menu toggle functionality
+         const menuToggle = document.querySelector('.menu-toggle');
         const dropdownMenu = document.querySelector('.dropdown-menu');
         
         menuToggle.addEventListener('click', function() {
@@ -59,7 +58,7 @@
             dropdownMenu.classList.toggle('active');
         });
         
-        
+        // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
             if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
                 menuToggle.classList.remove('active');
@@ -67,12 +66,29 @@
             }
         });
         
-        
+        // Close dropdown when pressing Escape keys
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 menuToggle.classList.remove('active');
                 dropdownMenu.classList.remove('active');
             }
+        });
+
+
+        //fazer a const
+        const titulosProjeto = document.querySelectorAll('.titulo-projeto');
+        const imagemProjeto = document.querySelectorAll('.imagemProjeto');
+        const visualizadorImagem = document.querySelectorAll('.grid-imgs');
+        //itera sobre cada titulo de projetos para add os event listener
+        titulosProjeto.forEach(titulo => {
+        titulo.addEventListener('mouseenter', () => {
+            const caminhoDaImagem = titulo.dataset.image;
+            imagemProjeto.src = caminhoDaImagem;
+            visualizadorImagem.classList.add('show');
+        });
+        titulo.addEventListener('mouseleave', () => {
+            visualizadorImagem.classList.remove('show');
+        });            
         });
     </script>
 </body>

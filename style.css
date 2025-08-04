@@ -467,19 +467,25 @@
   margin-left: 1%;
   margin-right: 14%;
 }
-.section-titlePJ{
-  padding-top: 150px;
-  width: 560px;
-  border-bottom: 2.5px solid white;
-  height: 80px;
+.projects-list{
+  flex: 1;
+  min-width: none;250px
 }
-.section-titlePJ .number{
-  padding-left: 300px;
-  font-family: 'noi-grotesk-fix';
-  font-size: 1.5em;
-  
+.titulo-projeto{
+  font-size: 18px;
+  color: #eee;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+}
+.titulo-projeto:hover{
+  background-color: #e9e9e9;
+  color: #333;
+  transform: translateX(5px);
+}
 
-}
 .title_projects {
   padding-left: 5px;
   height: 60px;
@@ -488,49 +494,29 @@
   font-variation-settings: "wght" 750, "ital" 1;
   font-feature-settings: "aalt" 0, "calt" 0, "locl" 0, "ordn" 0, "rlig" 0, "salt" 0, "ss01", "ss02", "ss03", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss12", "ss13"; 
 }
-
-
-.projects_box{
-  width: 100dvw;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  
-}
-
-
-
-
-.projects_grid .projects_box .project-1{
-  padding-top: 2%;
-  font-family: 'noi-grotesk-fix';
-  font-variation-settings: 'wght' 300;
-  font-size: 2em;
-  border-bottom: 2.5px solid white;
-  width: 560px;
-  height: 60px;
-
-}
-.projects_grid .projects_box .project-2{
-  font-family: 'noi-grotesk-fix';
-  font-variation-settings: 'wght' 300;
-  font-size: 2em;
-  border-bottom: 2.5px solid white;
-  width: 560px;
-  height: 60px;
-
-}
-.projects_main .grid-imgs{
-  width: 30dvw;
-  height: 20dvh;
-  
-}
 .grid-imgs{
-width: 100px;
-height: 100px;
-display: block;
-margin-top: auto;
-
+  width: 400px;
+  height: 300px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
 }
-
-
+.grid-imgs img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+/*classe que o js vai add p mostrar na imagem*/
+.grid-imgs.show{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
