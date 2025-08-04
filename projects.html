@@ -8,7 +8,9 @@
 </head>
 <body class="wrapper">
     <header class="projects_header">
-        <p>Fernando Sanches</p>
+        <a class="FS" href="index.html">
+            Fernando Sanches 
+            </a>
     
         <div class="menu-toggle">
             <div class="hamburger">
@@ -30,14 +32,14 @@
         <main class="projects_main">
         <section class="projects_grid">
             <section class="grid-imgs">
-                <img class="imagemProjeto" src="imgs/20250725_224449312_iOS.jpg" alt="">
-                <img class="imagemProjeto" src="imgs/efe-yagiz-soysal-LH4RyETZBpw-unsplash.jpg" alt="">
+                <img class="imagemProjeto" src="/imgs/SophiacademyLogo.jpg" alt="">
+                
             </section>
 
             <div class="projects-list">
-                <span class="title_projects">Projects</span>
-                <p class="titulo-projeto" data-image="imgs/20250725_224449312_iOS.jpg">SophiAcademy</p>
-                <p class="titulo-projeto" data-image= "imgs/efe-yagiz-soysal-LH4RyETZBpw-unsplash.jpg">naosei</p>
+                <span class="title_projects">Projects</span><hr>
+                <p class="titulo-projeto" data-image="/imgs/SophiAcademyLogo.jpg">SophiAcademy</p>
+                <p class="titulo-projeto" data-image= "/imgs/efe-yagiz-soysal-LH4RyETZBpw-unsplash.jpg">naosei</p>
                 <p class="titulo-projeto" data-image="">seila</p>
             </div>
             
@@ -77,19 +79,21 @@
 
         //fazer a const
         const titulosProjeto = document.querySelectorAll('.titulo-projeto');
-        const imagemProjeto = document.querySelectorAll('.imagemProjeto');
-        const visualizadorImagem = document.querySelectorAll('.grid-imgs');
+        const imagemProjeto = document.querySelector('.imagemProjeto');
+        const visualizadorImagem = document.querySelector('.grid-imgs');
         //itera sobre cada titulo de projetos para add os event listener
         titulosProjeto.forEach(titulo => {
-        titulo.addEventListener('mouseenter', () => {
-            const caminhoDaImagem = titulo.dataset.image;
-            imagemProjeto.src = caminhoDaImagem;
-            visualizadorImagem.classList.add('show');
+            titulo.addEventListener('mouseenter', () => {
+                const caminhoDaImagem = titulo.dataset.image;
+                imagemProjeto.src = caminhoDaImagem;
+                visualizadorImagem.classList.add('show');
+            });
+            
+            titulo.addEventListener('mouseleave', () => {
+                visualizadorImagem.classList.remove('show');
+            });            
         });
-        titulo.addEventListener('mouseleave', () => {
-            visualizadorImagem.classList.remove('show');
-        });            
-        });
+        //
     </script>
 </body>
 </html>
