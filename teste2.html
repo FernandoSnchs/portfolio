@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Fernando Sanches</title>
+    <style>
+        /* Suas fontes existentes */
+        @font-face {
+            font-family: 'teste1';
+            src: url(MovVariableTRIALVF.woff2);
+        }
+        @font-face {
+            font-family: 'sla';
+            src: url(EaseDisplayTRIAL-Regular.ttf);
+        }
+        @font-face {
+            font-family: 'noi-grotesk-fix';
+            src: url(NoiVariableFlexTrialGX.ttf);
+        }
+
+        /* BREADCRUMBS SIMPLES */
+        .breadcrumb {
+            padding: 10px 40px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            font-family: 'noi-grotesk-fix';
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .breadcrumb .current {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* TOAST SIMPLES */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            font-family: 'noi-grotesk-fix';
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* MELHORAR FEEDBACK DOS BOTÕES */
+        .btn-feedback {
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-feedback:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-feedback:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Loading simples */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '...';
+            position: absolute;
+            right: 10px;
+            animation: dots 1s infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '...'; }
+            40% { content: '..'; }
+            60% { content: '.'; }
+            80%, 100% { content: ''; }
+        }
+
+        /* SEU CSS ORIGINAL - MANTIDO */
+        .wrapper {
+            margin: 0;
+            animation: scroll1 300s linear infinite;
+            background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
+            color: #eee;
+            min-height: 100px;
+            height: 100dvh;
+            min-width: 360px;
+            width: 100dvw;
+            perspective: 1000px;
+            perspective-origin: 50% 50%;
+            will-change: transform;
+            contain: layout paint;
+        }
+
+        .index_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .FS {
+            font-family: sla;
+            font-variation-settings: "ss01", "ss02", "ss03", "ss04", "ss11", "wght" 750;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* Menu toggle - SEU CÓDIGO ORIGINAL */
+        .menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 1px;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        .hamburger span:nth-child(1) { top: 4px; }
+        .hamburger span:nth-child(2) { top: 9px; }
+        .hamburger span:nth-child(3) { top: 14px; }
+
+        .menu-toggle.active .hamburger span:nth-child(1) {
+            transform: rotate(50deg) translate(4px, 4px);
+        }
+        .menu-toggle.active .hamburger span:nth-child(2) {
+            opacity: 1; transform: translateY(0.6px);
+        }
+        .menu-toggle.active .hamburger span:nth-child(3) {
+            transform: rotate(-50deg) translate(3px, -3px);
+        }
+
+        /* Dropdown - SEU CÓDIGO ORIGINAL */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 40px;
+            margin-top: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+            min-width: 200px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-content a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            font-family: 'noi-grotesk-fix';
+        }
+
+        .dropdown-content a:hover {
+            color: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        /* Main - SEU CÓDIGO ORIGINAL */
+        .index_main {
+            width: 100dvw;
+            height: 100dvh;
+            display: flex;
+            padding-top: 10%;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(3);
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin: 0;
+            font-family: 'noi-grotesk-fix';
+            font-variation-settings: 'wght' 870;
+        }
+
+        .wrapper p {
+            font-size: 1.6rem;
+            padding-bottom: 0px;
+            font-family: 'noi-grotesk-fix';
+            font-variation-settings: 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss11', 'ss12', 'ss13';
+        }
+
+        .container-redes {
+            display: flex;
+            column-gap: 10px;
+        }
+
+        .redes {
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.2em;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .link span {
+            font-family: 'noi-grotesk-fix';
+            transition: font-variation-settings 0.5s ease;
+            font-variation-settings: 'wght' 100;
+        }
+
+        .link span:hover {
+            transform: scaleX(1.2);
+            transition: all 0.2s;
+            font-variation-settings: 'wght' 900;
+        }
+
+        @keyframes scroll1 {
+            100% { background-position: 0px 400%; }
+        }
+
+        @media (min-width: 670px) {
+            .title { font-size: 5rem; }
+        }
+    </style>
+</head>
+<body class="wrapper">
+    
+    <header class="index_header">
+        <a class="FS" href="index.html">Fernando Sanches</a>
+    
+        <div class="menu-toggle" id="menuToggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-content">
+                <a href="index.html" class="btn-feedback">Home</a>
+                <a href="cv.html" class="btn-feedback">CV</a>
+                <a href="projects.html" class="btn-feedback">Projects</a>
+                <a href="#contact" class="btn-feedback">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB SIMPLES -->
+    <nav class="breadcrumb">
+        <span id="breadcrumb-content">
+            <a href="index.html">Home</a> <span class="current">› Início</span>
+        </span>
+    </nav>
+    
+    <main class="index_main">
+        <div class="avatar">
+            <img src="imgs/20250725_224449312_iOS.jpg" alt="Fernando Sanches">
+        </div>
+        <h2 class="title">Fernando Sanches</h2>
+        <p>Student, Developer & Runner</p>
+        
+        <div class="container-redes">
+            <div class="redes">
+                <nav>
+                    <a class="link btn-feedback" href="projects.html" onclick="showFeedback('Carregando projetos...')">
+                        <span>Projects</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="redes">
+                <nav>
+                    <a class="link btn-feedback" href="#contact" onclick="showFeedback('Em breve!')">
+                        <span>Contact</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // TOAST SIMPLES
+        function showToast(message, duration = 3000) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, duration);
+        }
+
+        // FEEDBACK SIMPLES
+        function showFeedback(message) {
+            showToast(message);
+        }
+
+        // MENU TOGGLE - SEU CÓDIGO ORIGINAL
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(event) {
+            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // MELHORAR FEEDBACK DOS LINKS
+        document.querySelectorAll('.btn-feedback').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                this.classList.add('loading');
+                setTimeout(() => {
+                    this.classList.remove('loading');
+                }, 1000);
+            });
+        });
+
+        // INICIALIZAÇÃO
+        document.addEventListener('DOMContentLoaded', function() {
+            showToast('Bem-vindo!');
+        });
+    </script>
+    
+</body>
+</html>
