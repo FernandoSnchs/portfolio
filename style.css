@@ -504,9 +504,9 @@
   font-feature-settings: "aalt" 0, "calt" 0, "locl" 0, "ordn" 0, "rlig" 0, "salt" 0, "ss01", "ss02", "ss03", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss12", "ss13"; 
 }
 .grid-imgs{
-  margin-top: 10%;
-  width: 900px;
-  height: 800px;
+  margin-top: 7%;
+  width: 850px;
+  height: 714px;
   background-color: #f9f9f900;
   display: flex;
   justify-content: center;
@@ -519,8 +519,10 @@
   transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
 }
 .grid-imgs img{
-  max-width: 100%;
-  max-height: 100%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  width: 850px;
+  height: 714px;
   display: flex;
   object-fit: fill;
   border-radius: 0 20px 0 0;
