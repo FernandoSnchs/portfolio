@@ -1,5 +1,56 @@
 [
     {
-        "nome": Fernando Sanches
+        "nome": "Fernando Sanches",
+        "Especi": "Developer FullStack",
+        "email": "fernando.sanches.rodrigues@outlook.com",
+        "insta": "@sancheswz",
+        "git": "https://fernandosnchs.github.io/portfolio/",
+        "moradia": "São Paulo, Brazil",
+
+        "estudos": {
+            "estudo1":{
+                "data": "2025 - Present",
+                "oque": "Técnico em Desenvolvimento de Sistemas",
+                "onde": "Escola SENAI Armando de Arruda Pereira"
+            },
+            "estudo2":{
+                "data": "2024 - Present",
+                "oque": "Ensino Médio",
+                "onde": "Objetivo - SP"
+            },
+            "estudo3":{
+                "data": "1.2.3",
+                "oque": "a",
+                "onde": "a"
+            },
+            "estudo4":{
+                "data": "1.2.3",
+                "oque": "a",
+                "onde": "a"
+            },
+            "estudo5":{
+                "data": "1.2.3",
+                "oque": "a",
+                "onde": "a"
+            }
+        },
+        "linguas":{
+            "lingua1":{
+                ""
+            },
+            
+            "lingua1":{
+                
+            },
+            
+            "lingua1":{
+                
+            },
+            
+            "lingua1":{
+                
+            },
+        }
     }
+
 ]

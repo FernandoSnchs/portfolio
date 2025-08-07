@@ -1,6 +1,18 @@
 <?php
-    <!DOCTYPE html>
-    <html lang="en">
+      // Lê o arquivo JSON
+      $dadosJson = file_get_contents("dados.json");
+      $usuarios = json_decode($dadosJson, true);
+  
+      // Pega o nome do primeiro usuário do array
+      $NOME = $usuarios[0]["nome"];
+      $especializado = $usuarios[0]["Especi"];
+      $email = $usuarios[0]["email"];
+      $insta = $usuarios[0]["insta"];
+      $github = $usuarios[0]["git"];
+      $moradia = $usuarios[0]["moradia"];
+?>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +32,7 @@
                         </div>
                     </div>
                     <div class="profileText">
-                        <h3>Fernando<br>Sanches<br><span>Developer FullStack</span></h3>
+                    <h3><?= $NOME ?></h3><br><span><?= $especializado?></span></h3>
                     </div>
                 </div>
                 <div class="contentBox">
@@ -29,27 +41,32 @@
                         <ul>
                             <li>
                                 <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                                <span class="text">fernando.sanches.rodrigues@outlook.com</span>
+                                <span class="text"><?= $email ?></span>
                             </li>
                             <li>
                                 <span class="icon"><ion-icon name="logo-instagram"></ion-icon></span>
-                                <span class="text">@sancheswz</span>
+                                <span class="text"><?= $insta ?></span>
                             </li>
                             <li>
                                 <span class="icon"><ion-icon name="compass-outline"></ion-icon></span>
-                                <span class="text">https://fernandosnchs.github.io/portfolio/</span>
+                                <span class="text"><?= $github ?></span>
                             </li>
                             <li>
                                 <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
-                                <span class="text">São Caetano do Sul, São Paulo, Brasil</span>
+                                <span class="text"><?= $moradia ?></span>
                             </li>
                         </ul>
                         <h3>Education</h3>
                         <ul class="education">
                             <li>
-                                <h5>2024 - Present</h5>
-                                <h4>Técnico em Desenvolvimento de Sistemas</h4>
-                                <h6>Escola SENAI "Armando de Arruda Pereira" </h6>
+                                <h5><?= $usuarios[0]["estudos"]["estudo1"]["data"] ?></h5>
+                                <h4><?= $usuarios[0]["estudos"]["estudo1"]["oque"] ?></h4>
+                                <h6><?= $usuarios[0]["estudos"]["estudo1"]["onde"] ?></h6>                            
+                            </li>
+                            <li>
+                                <h5><?= $usuarios[0]["estudos"]["estudo2"]["data"] ?></h5>
+                                <h4><?= $usuarios[0]["estudos"]["estudo2"]["oque"] ?></h4>
+                                <h6><?= $usuarios[0]["estudos"]["estudo2"]["onde"] ?></h6>
                             </li>
                         </ul>
                         <h3>Language</h3>
@@ -84,5 +101,4 @@
             <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
-    </html>
-?>
+</html>
