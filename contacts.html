@@ -4,8 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="wrapper">
+    <header class="index_header">
+        <a class="FS" href="index.html">
+            Fernando Sanches 
+            </a>
+        
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <div class="dropdown-content">
+                    <a href="index.html">Home</a>
+                    <a href="cv.php">CV</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contacts.html">Contact</a>
+                </div>
+            </div>
+    </header>
+    <main class="index_main">
+        <div class="container">
+            <div class="title">
+                <p>Contact-me</p><hr>
+            </div>
+            <div class="contacts">
+                <ul>
+                    <li><a href="https://www.instagram.com/sancheswz?igsh=NmVtNDhhNHc5Y2V2">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+                    <li><ion-icon name="mail-outline"></ion-icon>fernando.sanches.rodrigues@outlook.com</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
     
 </body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+     // Menu toggle functionality
+     const menuToggle = document.querySelector('.menu-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');111
+        
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown when pressing Escape keys
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                menuToggle.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+        
+</script>
 </html>
