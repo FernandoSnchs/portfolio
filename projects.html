@@ -40,15 +40,7 @@
                 <span class="title_projects">Projects</span><hr>
 
                 <a href="" style="text-decoration: none; color: white;">
-                    <p class="titulo-projeto" data-image="./imgs/SophiAcademyLogo.jpg" style="cursor: pointer;">SophiAcademy</p>
-                </a>
-
-                <a href="" style="text-decoration: none; color: white;">
-                    <p class="titulo-projeto" data-image= "./imgs/efe-yagiz-soysal-LH4RyETZBpw-unsplash.jpg" style="cursor: pointer;">naosei</p>
-                </a>
-
-                <a href="" style="text-decoration: none; color: white;">
-                    <p class="titulo-projeto" data-image="./imgs/" style="cursor: pointer;">seila</p>
+                    <p class="titulo-projeto" data-image="./imgs/SophiacademyLogo.jpg" style="cursor: pointer;">SophiAcademy</p>
                 </a>
             </div>
             
@@ -90,7 +82,7 @@
         const titulosProjeto = document.querySelectorAll('.titulo-projeto');
         const imagemProjeto = document.querySelector('.imagemProjeto');
         const visualizadorImagem = document.querySelector('.grid-imgs');
-        //itera sobre cada titulo de projetos para add os event listener
+        // sobre cada titulo de projetos para add os event listener
         titulosProjeto.forEach(titulo => {
             titulo.addEventListener('mouseenter', () => {
                 const caminhoDaImagem = titulo.dataset.image;

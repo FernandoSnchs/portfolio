@@ -72,25 +72,25 @@
                         <h3>Language</h3>
                         <ul class="language">
                             <li>
-                                <span class="text">English</span>
+                                <span class="text"><?= $usuarios[0]["linguas"]["lingua1"]["lingua"] ?></span>
                                 <span class="percent">
-                                    <div style="width: 80%;"></div> <!-- 800px era exagerado -->
+                                    <div style="width: 80%;"></div> 
                                 </span>
                             </li>
                             
                             <li>
-                                <span class="text">Portuguese</span>
-                                <span class="percent"><div style="width: 100%;"></div></span>
+                                <span class="text"><?= $usuarios[0]["linguas"]["lingua2"]["lingua"] ?></span>
+                                <span class="percent"><div style="width: 80%;"></div></span>
                             </li>
                             
                             <li>
-                                <span class="text">Spanish</span>
-                                <span class="percent"><div style="width: 50%;"></div></span>
+                                <span class="text"><?= $usuarios[0]["linguas"]["lingua3"]["lingua"] ?></span>
+                                <span class="percent"><div style="width: 35%;"></div></span>
                             </li>
                             
                             <li>
-                                <span class="text">French</span>
-                                <span class="percent"><div style="width: 10%;"></div></span>
+                                <span class="text"><?= $usuarios[0]["linguas"]["lingua4"]["lingua"] ?></span>
+                                <span class="percent"><div style="width: 25%;"></div></span>
                             </li>
                         </ul>
                         

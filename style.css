@@ -533,3 +533,65 @@
   visibility: visible;
   transform: scale(1);
 }
+
+
+
+
+/*Contacts*/
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.title p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+.title hr {
+  margin: 10px auto;
+  width: 50%;
+  border: 1px solid white;
+}
+
+.contacts ul {
+  margin-top: 20px;
+}
+
+.contacts li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contacts li ion-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: white;
+}
+
+.contacts li a {
+  font-size: 1rem;
+  color: white;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.contacts li a:hover {
+  color: #005bb5;
+}
+
+.contacts li span {
+  font-size: 1rem;
+  color: #333;
+}

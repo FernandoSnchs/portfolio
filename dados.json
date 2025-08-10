@@ -36,19 +36,19 @@
         },
         "linguas":{
             "lingua1":{
-                
+                "lingua": "Html"
             },
             
-            "lingua1":{
-                
+            "lingua2":{
+                "lingua": "Css"
             },
             
-            "lingua1":{
-                
+            "lingua3":{
+                "lingua": "php"
             },
             
-            "lingua1":{
-                
+            "lingua4":{
+                "lingua": "Js"
             }
         }
     }
