@@ -39,9 +39,7 @@
             <div class="projects-list">
                 <span class="title_projects">Projects</span><hr>
 
-                <a target="_blank" href="https://github.com/FernandoSnchs/SophiAcademy" style="text-decoration: none; color: white;">
-                    <p class="titulo-projeto" data-image="./imgs/SophiacademyLogo.jpg" style="cursor: pointer;">SophiAcademy</p>
-                </a>
+                 <p class="titulo-projeto" data-image="./imgs/SophiacademyLogo.jpg" style="cursor: pointer;">SophiAcademy</p>
             </div>
             
           
@@ -95,6 +93,44 @@
             });            
         });
         //
+
+
+
+
+        //js para quando a tela for mobile
+            function isMobileScreen() {
+            return window.innerWidth <= 768;
+        }
+
+        function setupMobileProjectInteraction() {
+            const titulosProjeto = document.querySelectorAll('.titulo-projeto');
+            const imagemProjeto = document.querySelector('.imagemProjeto');
+
+            titulosProjeto.forEach(titulo => {
+                titulo.addEventListener('click', () => {
+                    const novoSrc = titulo.dataset.image;
+
+                    if (imagemProjeto.src.includes(novoSrc) && imagemProjeto.classList.contains('show')) {
+                        imagemProjeto.classList.remove('show');
+                    } else {
+                        imagemProjeto.src = novoSrc;
+                        imagemProjeto.classList.add('show');
+                    }
+                });
+            });
+        }
+
+        // Executar no load
+        if (isMobileScreen()) {
+            setupMobileProjectInteraction();
+        }
+
+        // Executar também no redimensionamento
+        window.addEventListener('resize', () => {
+            if (isMobileScreen()) {
+                setupMobileProjectInteraction();
+            }
+        });
     </script>
 </body>
 </html>

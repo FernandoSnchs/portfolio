@@ -22,7 +22,7 @@
     </head>
     <body class="cv_body">
             <ul class="menu">
-                <li><a href="index.html">voltar</a></li>
+                <li><a href="index.html">Back</a></li>
             </ul>
             <div class="container">
                 <div class="top">
