@@ -50,6 +50,27 @@
             "lingua4":{
                 "lingua": "Js"
             }
+        },
+        "linguages":{
+            "lingua1":{
+                "lingua": "Português",
+                "nivel": "Nativo"
+            },
+            
+            "lingua2":{
+                "lingua": "Inglês",
+                "nivel": "Avançado"
+            },
+            
+            "lingua3":{
+                "lingua": "Espanhol",
+                "nivel": "Intermediário"
+            },
+            
+            "lingua4":{
+                "lingua": "Francês",
+                "nivel": "Básico"
+            }
         }
     }
 

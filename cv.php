@@ -69,7 +69,10 @@
                                 <h6><?= $usuarios[0]["estudos"]["estudo2"]["onde"] ?></h6>
                             </li>
                         </ul>
-                        <h3>Language</h3>
+                        
+                    </div>
+                    <div class="rightSide">
+                    <h3>Hard Skills</h3>
                         <ul class="language">
                             <li>
                                 <span class="text"><?= $usuarios[0]["linguas"]["lingua1"]["lingua"] ?></span>
@@ -94,8 +97,30 @@
                             </li>
                         </ul>
                         
+                        
+                    <h3>Languages</h3>
+                        <ul class="Language">
+                            <li>
+                                <span class="text"><?= $usuarios[0]["linguages"]["lingua1"]["lingua"] ?>:</span>
+                                <p><?= $usuarios[0]["linguages"]["lingua1"]["nivel"] ?></p>
+                            </li>
+                            
+                            <li>
+                                <span class="text"><?= $usuarios[0]["linguages"]["lingua2"]["lingua"] ?>:</span>
+                                <p><?= $usuarios[0]["linguages"]["lingua2"]["nivel"] ?></p>
+                            </li>
+                            
+                            <li>
+                                <span class="text"><?= $usuarios[0]["linguages"]["lingua3"]["lingua"] ?>:</span>
+                                <p><?= $usuarios[0]["linguages"]["lingua3"]["nivel"] ?></p>
+                            </li>
+                            
+                            <li>
+                                <span class="text"><?= $usuarios[0]["linguages"]["lingua4"]["lingua"] ?>:</span>
+                                <p><?= $usuarios[0]["linguages"]["lingua4"]["nivel"] ?></p>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="rightSide"></div>
                 </div>
             </div>
             <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

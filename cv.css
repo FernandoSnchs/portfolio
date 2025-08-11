@@ -90,6 +90,9 @@
     border-right: 50px solid #fff;
 
   }
+  .container .rightSide{
+    margin-left: 5%;
+  }
 
   .container .top{
     position: relative;
