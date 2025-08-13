@@ -60,33 +60,7 @@
   
    
     
-    <script>
-        // Menu toggle functionality
-        const menuToggle = document.querySelector('.menu-toggle');
-        const dropdownMenu = document.querySelector('.dropdown-menu');111
-        
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            dropdownMenu.classList.toggle('active');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                menuToggle.classList.remove('active');
-                dropdownMenu.classList.remove('active');
-            }
-        });
-        
-        // Close dropdown when pressing Escape keys
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                menuToggle.classList.remove('active');
-                dropdownMenu.classList.remove('active');
-            }
-        });
-        
-    </script>
+    <script src="script.js"></script>
     
 </body>
 </html>

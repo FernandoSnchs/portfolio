@@ -475,14 +475,16 @@
   min-width: none;
 }
 .titulo-projeto{
+  font-size: 1.5em;
   box-shadow: inset 0 0 0 0 #e0e0e0;
   padding: 12px 15px;
   margin-bottom: 8px;
-  border-bottom: 1px solid #e0e0e0;
   cursor: default;
   transition: ease-in-out .3s, box-shadow .3s ease-in-out;
   font-variation-settings: 'wght' 100;
   font-family: 'noi-grotesk-fix';
+  text-decoration: none;
+  color: white;
   
 }
 
@@ -603,3 +605,109 @@
 
 
 
+/*molde projetos*/
+.molde-body{
+  margin: 0;
+  animation: scroll1 300s linear infinite;
+  background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #eee;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  will-change: transform;
+  contain: layout paint;
+}
+.banner{
+  background-color: white;
+  width: 100dvw;
+  height: auto;
+  text-align: center;
+}
+.banner img{
+  width: 35%;
+}
+.container-desc{
+  margin-top: 1%;
+  width: 100dvw;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.container-desc .left-desc{
+width: 600px;
+height: 400px;
+background-color: #111;
+border-radius: 20px;
+margin-left: 5%;
+font-family: 'noi-grotesk-fix';
+}
+
+.desc{
+  width: 50%;
+  text-align: justify;
+  margin-left: 25%;
+}
+.titulo{
+  text-align: center;
+  font-family: 'noi-grotesk-fix';
+}
+
+.integrantes{
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+.integrante{
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+}
+.avatar-desc{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px; 
+  height: 50px;
+  border: 1px ; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1px solid rgba(255, 255, 255, 0.15);
+}
+.avatar-desc img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+.Nome{
+  text-align: center;
+}
+.link-git{
+  padding-left: 50%;
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 128, 0.35), 0 2px 8px 0 rgba(0,0,0,0.5);
+  background: #181818;
+  border: 1px solid #2ecc71;
+  text-decoration: none;
+  color: green;
+
+}
+
+
+.container-desc .right-desc{
+  width: 600px;
+  height: 400px;
+  background-color: #111;
+  border-radius: 20px;
+  margin-right: 5%;
+ font-family: 'noi-grotesk-fix'; 
+}
+
+
+
+.integrantes{
+ 
+  column-gap: 30px;
+}

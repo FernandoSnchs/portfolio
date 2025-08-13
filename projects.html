@@ -10,7 +10,7 @@
     <header class="projects_header">
         <a class="FS" href="index.html">
             Fernando Sanches 
-            </a>
+        </a>
     
         <div class="menu-toggle">
             <div class="hamburger">
@@ -34,14 +34,14 @@
             <section class="grid-imgs">
                 <img class="imagemProjeto" src="./imgs/SophiacademyLogo.jpg" alt="">
                 
-            </section>
+            </section> 
 
             <div class="projects-list">
                 <span class="title_projects">Projects</span><hr>
 
-                 <a href="">
-                     <p class="titulo-projeto" data-image="./imgs/SophiacademyLogo.jpg" style="cursor: pointer;"><ion-icon name="caret-forward-outline"></ion-icon>SophiAcademy</p>
-                 </a>
+              <a href="projeto_Sophie.html" class="titulo-projeto" data-image="./imgs/SophiacademyLogo.jpg" style="cursor: pointer;">SophiAcademy </a>
+              <div style="width: 100%;height: 1px; background-color: white;margin-top: 2%;"></div>
+                 
             </div>
             
           
@@ -50,90 +50,7 @@
        
         </main>
     </div>
-    <script>
-        
-         // Menu toggle functionality
-         const menuToggle = document.querySelector('.menu-toggle');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-        
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            dropdownMenu.classList.toggle('active');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                menuToggle.classList.remove('active');
-                dropdownMenu.classList.remove('active');
-            }
-        });
-        
-        // Close dropdown when pressing Escape keys
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                menuToggle.classList.remove('active');
-                dropdownMenu.classList.remove('active');
-            }
-        });
-
-
-        //fazer a const
-        const titulosProjeto = document.querySelectorAll('.titulo-projeto');
-        const imagemProjeto = document.querySelector('.imagemProjeto');
-        const visualizadorImagem = document.querySelector('.grid-imgs');
-        // sobre cada titulo de projetos para add os event listener
-        titulosProjeto.forEach(titulo => {
-            titulo.addEventListener('mouseenter', () => {
-                const caminhoDaImagem = titulo.dataset.image;
-                imagemProjeto.src = caminhoDaImagem;
-                visualizadorImagem.classList.add('show');
-            });
-            
-            titulo.addEventListener('mouseleave', () => {
-                visualizadorImagem.classList.remove('show');
-            });            
-        });
-        //
-
-
-
-
-        //js para quando a tela for mobile
-            function isMobileScreen() {
-            return window.innerWidth <= 768;
-        }
-
-        function setupMobileProjectInteraction() {
-            const titulosProjeto = document.querySelectorAll('.titulo-projeto');
-            const imagemProjeto = document.querySelector('.imagemProjeto');
-
-            titulosProjeto.forEach(titulo => {
-                titulo.addEventListener('click', () => {
-                    const novoSrc = titulo.dataset.image;
-
-                    if (imagemProjeto.src.includes(novoSrc) && imagemProjeto.classList.contains('show')) {
-                        imagemProjeto.classList.remove('show');
-                    } else {
-                        imagemProjeto.src = novoSrc;
-                        imagemProjeto.classList.add('show');
-                    }
-                });
-            });
-        }
-
-        // Executar no load
-        if (isMobileScreen()) {
-            setupMobileProjectInteraction();
-        }
-
-        // Executar também no redimensionamento
-        window.addEventListener('resize', () => {
-            if (isMobileScreen()) {
-                setupMobileProjectInteraction();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
