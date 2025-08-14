@@ -78,3 +78,12 @@
            setupMobileProjectInteraction();
        }
    });
+
+   // pre loader
+   window.addEventListener("load", function() {
+    // Esconde o preloader
+    document.getElementById("preloader").style.display = "none";
+    
+    // Mostra o conteúdo da página
+    document.querySelector(".content").style.display = "block";
+  });

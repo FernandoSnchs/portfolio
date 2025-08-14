@@ -13,6 +13,36 @@
   src: url(NoiVariableFlexTrialGX.ttf);
 }
 
+/* Estilo do preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Animação de carregamento */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #5b2be0;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+  
 
 * {
   user-select: none; /* impede cursor de texto */
@@ -302,8 +332,8 @@
     object-fit: cover; 
     transform: scale(3);
   }
-  .title {
-    font-size: 2.5rem;
+  .index_main .title {
+    font-size: 5.5rem;
     margin: 0;
     font-family: 'noi-grotesk-fix';
     font-variation-settings: 'wght' 870; 
