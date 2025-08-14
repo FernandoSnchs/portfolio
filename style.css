@@ -14,7 +14,9 @@
 }
 
 
-
+* {
+  user-select: none; /* impede cursor de texto */
+}
 
 .index_header {
     display: flex;
@@ -279,7 +281,7 @@
     perspective: 1000px;
     perspective-origin: 50% 50%;
     will-change: transform;
-    contain: layout paint;
+    contain: layout paint;\\
     
   }
   .avatar {
@@ -624,15 +626,18 @@
 /*molde projetos*/
 .molde-body{
   margin: 0;
-  animation: scroll1 300s linear infinite;
-  background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
-  background-size: cover;
-  background-position: center;
-  color: #eee;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
-  will-change: transform;
-  contain: layout paint;
+    animation: scroll1 300s linear infinite;
+    background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #eee;
+    min-height: 100px;
+    min-width: 360px;
+    width: 100dvw;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    will-change: transform;
+    contain: layout paint;
 }
 .banner{
   background-color: white;
