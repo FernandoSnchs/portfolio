@@ -13,6 +13,8 @@
   src: url(NoiVariableFlexTrialGX.ttf);
 }
 
+
+
 /* Estilo do preloader */
 #preloader {
   position: fixed;
@@ -47,6 +49,28 @@
 * {
   user-select: none; /* impede cursor de texto */
 }
+
+
+/*back Button*/
+.back-button{
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 0;
+
+}
+.back-button img{
+  color: white;
+  transition: all 0.3s ease;
+}
+.back-button:hover {
+  transform: translateY(-1.5px);
+}
+
 
 .index_header {
     display: flex;
@@ -602,12 +626,14 @@
 
 .contacts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo */
-  gap: 20px; /* Espaçamento entre os itens */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 100px; 
   justify-items: center;
 }
 
 .contact-item {
+  font-variation-settings: 'wght' 300;
+  font-family: 'noi-grotesk-fix';
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -615,13 +641,14 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all  0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 300px;
 }
 
 .contact-item:hover {
   transform: translateY(-5px);
+  font-variation-settings: 'wght' 800;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
@@ -631,7 +658,6 @@
   margin-bottom: 10px;
   transition: color 0.3s ease;
 }
-
 .contact-item:hover ion-icon {
   color: white
 }
@@ -660,6 +686,8 @@
     background: url(imgs/polina-silivanova-42_l9l5Pxwk-unsplash.jpg);
     background-size: cover;
     background-position: center;
+    width: 100dvw;
+    height: 100dvh;
     color: #eee;
     min-height: 100px;
     min-width: 360px;
@@ -683,7 +711,7 @@
   width: 100dvw;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .container-desc .left-desc{
 width: 600px;
@@ -747,9 +775,11 @@ font-family: 'noi-grotesk-fix';
   height: 20px;
   font-size: 16px;
   padding: 0.2rem 0.8rem;
-  background-color: #111;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 8px;
   justify-content: center;
   display: inline-flex;
@@ -766,7 +796,7 @@ font-family: 'noi-grotesk-fix';
 .link-git:hover{
   background-color: white;
   color: #111;
-  box-shadow: 0 8px 32px 0 rgba(0, 255, 128, 0.35), 0 2px 8px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 128, 0.35), 0 2px 8px 0 rgba(0,0,0,0.5);
   transform: translateY(-2px);
   cursor: pointer;
   font-variation-settings: 'wght' 800;
@@ -806,14 +836,16 @@ font-family: 'noi-grotesk-fix';
 /*botao de visitar*/
 
 .button-visit{
-  margin-left: 45%;
+ margin-top: 10%; 
   width: 140px;
   height: 50px;
   font-size: 16px;
   padding: 1rem 1.5rem;
-  background-color: #111;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 8px;
   justify-content: center;
   display: inline-flex;
@@ -829,8 +861,9 @@ font-family: 'noi-grotesk-fix';
 .button-visit:hover{
   background-color: white;
   color: #111;
-  box-shadow: 0 8px 32px 0 rgba(0, 255, 128, 0.35), 0 2px 8px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 128, 0.35), 0 2px 8px 0 rgba(0,0,0,0.5);
   transform: translateY(-2px);
   cursor: pointer;
   font-variation-settings: 'wght' 800;
 }
+
